@@ -1,0 +1,13 @@
+.container{
+    text-align: center;
+}
+h1 {
+    margin: 20px 0;
+}
+form{
+    margin: auto;
+    width: 355px;
+}
+input{
+    margin-top: 30px;
+}

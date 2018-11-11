@@ -1,0 +1,27 @@
+version: '3.0'
+
+services:
+    php:
+        build: .
+        volumes:
+        - ./src:/var/www/code
+        depends_on:
+        - bdd
+    nginx:
+        image: nginx
+        ports:
+        - 80:80
+        volumes:
+        - ./src:/var/www/code
+        - ./vhost:/etc/nginx/conf.d
+        depends_on:
+        - php
+    bdd:
+        image: mariadb
+        environment:
+        - MYSQL_ROOT_PASSWORD=admin
+        - MYSQL_DATABASE=base_php_blog
+    admin:
+        image: adminer
+        ports:
+        - 9000:8080
