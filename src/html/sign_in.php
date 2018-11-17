@@ -12,16 +12,9 @@
         if(isset($_POST["submit"])){
             if($_POST["username"] != "" && $_POST["password"] != ""){
                 $username = htmlspecialchars($_POST["username"]);
-                $password = htmlspecialchars($_POST["password"]);
+                $password = htmlspecialchars($_POST['password']);
 
-                $isVerified = verifyLogin($database, $username, $password);
-                if($isVerified){
-                    $_SESSION["username"] = $username;
-                    header("Location:/html/home.php");
-                } else {
-                    echo "Caliss de tabernak qui s'en bat les gosses ; Criss!";
-                }
-
+                verifyLogin($database, $username, $password);
             } else {
                 echo "Veuillez saisir tous les champs disponibles";
             }
@@ -29,20 +22,21 @@
     }
 
 
-    function verifyLogin(PDO $connection, string $username, string $password): bool
+    function verifyLogin(PDO $connection, string $username, string $password)
     {
-        $stmt = $connection->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+        $stmt = $connection->prepare("SELECT * FROM users WHERE username = :username ");
         $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
         $stmt->execute();
         $result = $stmt->fetch();
-        if (!empty($result)) {
-            $verifyUser = TRUE;
+        $hash = $result['password'];
+        if (password_verify($password, $hash)) {
+            $_SESSION['username'] = $result['username'];
+            header("location:/html/home.php");
         } else {
-            $verifyUser = FALSE;
+            echo("les identifiants sont incorrects");
         }
-        return (bool)$verifyUser;
     }
+
     include 'header.php';
 ?>
 <div class="container">

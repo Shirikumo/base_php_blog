@@ -12,8 +12,9 @@
         // si on a submit et qu'on a un username
         if(isset($_POST["submit"])){
             if($_POST["username"] != "" && $_POST["password"] != ""){
+                $options = ['cost' => 12];
                 $username = htmlspecialchars($_POST["username"]);
-                $password = htmlspecialchars($_POST["password"]);
+                $password = password_hash($_POST['password'], PASSWORD_BCRYPT, $options);
 
                 $isUsed = userExist($database, $username);
 
