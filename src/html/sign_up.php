@@ -9,7 +9,6 @@
 
     function signUp($database)
     {
-        // si on a submit et qu'on a un username
         if(isset($_POST["submit"])){
             if($_POST["username"] != "" && $_POST["password"] != ""){
                 $options = ['cost' => 12];
@@ -21,10 +20,11 @@
                 if($isUsed){
                     echo "Osti de criss de tabarnak de câliss !";
                 } else {
-                    echo "pseudo dispo";
+                    echo "pseudo dispo ";
                     $isCreated = createUser($database, $username, $password);
                     if($isCreated){
                         echo "le compte est bien crée";
+                        redirection("/html/home.php");
                     } else {
                         echo "Nique toi encore plus fdp de consanguin";
                     }
@@ -44,6 +44,7 @@
         $stmt->execute();
         return $stmt;
     }
+
     include 'header.php';
 ?>
 <div class="container">

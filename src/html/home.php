@@ -10,7 +10,7 @@
     }
 
     $strWelcome = <<<'WELCOME'
-    <h2>Bienvenue sur mon blog !</h2>
+    <h2>Bienvenue le blog !</h2>
 WELCOME;
 
     $offset = 5 * $numPage - 5;

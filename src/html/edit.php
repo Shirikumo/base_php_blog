@@ -45,7 +45,3 @@ include 'header.php';
 </div>
 
 </body>
-
-
-
-header("location:/html/admin_page.php");

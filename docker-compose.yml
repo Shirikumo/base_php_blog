@@ -23,6 +23,8 @@ services:
         - MYSQL_DATABASE=base_php_blog
         - MYSQL_USER=admin
         - MYSQL_PASSWORD=passw0rd
+        volumes:
+        - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
     admin:
         image: adminer
         ports:
