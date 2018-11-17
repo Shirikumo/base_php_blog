@@ -15,7 +15,8 @@
         return $result;
     }
 
-    function getComments(PDO $connection, $idArticle){
+    function getComments(PDO $connection, $idArticle)
+    {
         $stmt = $connection->prepare("SELECT * FROM comments WHERE article = :id");
         $stmt->bindParam(':id', $idArticle, PDO::PARAM_INT);
         $stmt->execute();

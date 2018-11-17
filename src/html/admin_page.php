@@ -65,6 +65,7 @@ include 'header.php';
                             <div class="d-flex">
                                 <a href="/html/article.php?id=<?= $articles[$c]['id'] ?>" class="btn-custom">Voir</a>
                                 <a href="/html/delete.php?id=<?= $articles[$c]['id'] ?>" class="btn-custom">Supprimer</a>
+                                <a href="/html/edit.php?id=<?= $articles[$c]['id'] ?>" class="btn-custom">Modifier</a>
                             </div>
                         </div>
                         <img src="../<?= $articles[$c]['image'] ?>">
