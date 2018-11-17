@@ -1,0 +1,80 @@
+body{
+    background-image: url("../Elegant_Background-3.jpg");
+    background-size: cover;
+    min-height: 100vh;
+}
+.container{
+    text-align: center;
+}
+h1{
+    color: white;
+    font-size: 36px;
+}
+h2 {
+    margin: 40px 0;
+    font-size: 36px;
+}
+form{
+    margin: auto;
+    width: 450px;
+}
+input{
+    margin-top: 30px;
+}
+.content{
+    margin-top: 15px;
+    display: flex;
+}
+img{
+    max-height: 300px;
+    max-width: 450px;
+}
+.flexy {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    background-color: #333333;
+}
+.flexy-col {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+a {
+    min-width: 92px;
+}
+p{
+    font-size: 20px;
+    color: white;
+}
+.text {
+    width: 100%;
+}
+.flexy-arr{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+.btn-custom {
+    max-width: 100px;
+}
+.display {
+    margin-top: 30px;
+    padding: 30px;
+    padding: 20px;
+    background-color: #333333;
+    border-radius: 20px;
+}
+.articleTitle{
+    margin-top: 0;
+}
+.d-flex {
+    display: flex;
+}
+.d-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

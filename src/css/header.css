@@ -1,4 +1,4 @@
-header{
+nav{
     display: flex;
     justify-content: space-between;
     background-color: #333333;
@@ -25,6 +25,5 @@ a {
     background-color: #333333;
 }
 a:hover {
-    background-color: #111111;
     text-decoration: none !important;
 }

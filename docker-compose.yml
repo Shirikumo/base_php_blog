@@ -10,7 +10,7 @@ services:
     nginx:
         image: nginx
         ports:
-        - 80:80
+        - 8080:80
         volumes:
         - ./src:/var/www/code
         - ./vhost:/etc/nginx/conf.d
@@ -21,6 +21,8 @@ services:
         environment:
         - MYSQL_ROOT_PASSWORD=admin
         - MYSQL_DATABASE=base_php_blog
+        - MYSQL_USER=admin
+        - MYSQL_PASSWORD=passw0rd
     admin:
         image: adminer
         ports:
